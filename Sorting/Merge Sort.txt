@@ -1,4 +1,19 @@
-ublic class MergeSort {
+package algorithmsAndDS;
+
+
+/**
+ * 
+ * @author Kunal
+ *
+ * Time complexity for all 3 cases (worst, average and best) : θ(nLogn)
+ * Auxiliary Space: O(n)
+ * Algorithmic Paradigm: Divide and Conquer
+ * Applications: Linked List sorting
+ *
+ */
+
+
+public class MergeSort {
 	
 	public static void main(String[] args) {
 		
