@@ -1,4 +1,21 @@
-package algorithmsAndDS;
+package algo_ds;
+
+
+/**
+ * 
+ * @author Kunal
+ *
+ * Time complexity: 
+ * Best Case: O(nlogn)
+ * Worst Case: o(n^2)
+ * Auxiliary Space: in-place sorting
+ * Algorithmic Paradigm: Divide and Conquer
+ * Applications:Commercial Computing is used in various government and 
+ * private organizations for the purpose of sorting various data like 
+ * sorting files by name/date/price, sorting of students by their roll no., 
+ * sorting of account profile by given id, etc.
+ *
+ */
 
 public class QuickSort {
 	
@@ -15,14 +32,6 @@ public class QuickSort {
 		printArray(mainArray, size);
 		
 	}
-	
-	private static void printArray(int[] arr, int size)
-	{
-	    for(int i = 0; i < size; i++)
-	        System.out.print(arr[i] + " ");
-	         
-	    System.out.println();
-	}
 
 	private static void sort(int[] mainArray, int first, int last) {
 		
@@ -35,7 +44,7 @@ public class QuickSort {
 		}
 		
 	}
-
+	
 	private static int partition(int[] mainArray, int first, int last) {
 
 		int pivot = mainArray[last];
@@ -43,7 +52,6 @@ public class QuickSort {
 		int i = first - 1;
 		
 		for(int j = first; j < last; j++) {
-			
 			
 			if(mainArray[j] < pivot)
 			{
@@ -56,8 +64,20 @@ public class QuickSort {
 			
 		}
 		
-		return 0;
+		swap(mainArray, i + 1, last);
+		
+		return i+1;
 	}
+
+	
+	private static void printArray(int[] arr, int size)
+	{
+	    for(int i = 0; i < size; i++)
+	        System.out.print(arr[i] + " ");
+	         
+	    System.out.println();
+	}
+
 
 	private static void swap(int[] mainArray, int i, int j) {
 		int temp = mainArray[j];
