@@ -20,3 +20,8 @@ public class ReverseString {
         System.out.println(reverse(s));  // Output: diordna
     }
 }
+
+
+time complexity : O(n/2 => O(n)   
+Time complexity cannot be reduced as all elements has to be accessed while reversing an array.
+Space complexity : O(1)  In place reversal
