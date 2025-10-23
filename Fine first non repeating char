@@ -1,0 +1,73 @@
+find the first non-repeating character in a string
+
+public class FirstNonRepeatingCharacter {
+    
+    public static Character findFirstNonRepeatingChar(String s) {
+        for (int i = 0; i < s.length(); i++) {
+            int count = 0;
+            
+            for (int j = 0; j < s.length(); j++) {
+                if (s.charAt(i) == s.charAt(j)) {
+                    count++;
+                }
+            }
+            
+            if (count == 1) {
+                return s.charAt(i);
+            }
+        }
+      
+        return null;
+    }
+
+    public static void main(String[] args) {
+        String input = "aabbccde";
+        Character result = findFirstNonRepeatingChar(input);
+        
+        if (result != null) {
+            System.out.println("First non-repeating character: " + result);
+        } else {
+            System.out.println("No non-repeating character found.");
+        }
+    }
+}
+
+Time complexity for the above is O(n^2)
+Space complexity : O(1)
+
+
+// Approach to reduce time complexity
+
+public class FirstNonRepeatingCharacter {
+
+    public static Character findFirstNonRepeatingChar(String s) {
+      
+        int[] freq = new int[256];  // Array to store frequencies of characters (ASCII range)
+
+        for (int i = 0; i < s.length(); i++) {
+            freq[s.charAt(i)]++;
+        }
+
+        for (int i = 0; i < s.length(); i++) {
+            if (freq[s.charAt(i)] == 1) {
+                return s.charAt(i);
+            }
+        }
+
+        return null;
+    }
+
+    public static void main(String[] args) {
+        String input = "aabbccde";
+        Character result = findFirstNonRepeatingChar(input);
+
+        if (result != null) {
+            System.out.println("First non-repeating character: " + result);
+        } else {
+            System.out.println("No non-repeating character found.");
+        }
+    }
+}
+
+Time complexity for above : O(n)
+Space COmplexity : O(1)
